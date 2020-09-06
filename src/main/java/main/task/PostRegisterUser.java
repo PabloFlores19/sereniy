@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 
 
+
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class PostRegisterUser implements Task{
@@ -17,6 +18,7 @@ public class PostRegisterUser implements Task{
     public PostRegisterUser(RegisterUserInfo userInfo) {
         this.userInfo = userInfo;
     }
+
     public static Performable withInfo(RegisterUserInfo userInfo){
         return instrumented(PostRegisterUser.class, userInfo);
     }
