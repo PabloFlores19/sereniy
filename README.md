@@ -10,7 +10,8 @@ You can use this project as a quick starting point for your own projects.
 
 Git:
 
-    git clone https://github.com/serenity-bdd/serenity-junit-starter.git
+    git clone https://github.com/kloDerek/sereniy.git
+
     cd serenity-junit-starter
 
 
