@@ -32,4 +32,11 @@ public class LoginTwitchPage extends PageObject {
         String urlTwitch = getDriver().getCurrentUrl();
         Assert.assertTrue(urlTwitch.contains("twitch"));
     }
+
+    public String google(){
+        ApplicationContext context = new FileSystemXmlApplicationContext("/src/test/" +
+                "resources/test.properties");
+        LoginDAO pablo = context.getBean("login", LoginDAO.class);
+        return pablo.getUrl();
+    }
 }
