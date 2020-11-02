@@ -1,9 +1,9 @@
 package testcases;
 
-import main.elements.ApiGet;
-import main.models.users.RegisterUserInfo;
-import main.questions.ResponseCode;
-import main.task.PostRegisterUser;
+import com.serenity.project.dataprovider.ApiGet;
+import com.serenity.project.model.users.RegisterUserInfo;
+import com.serenity.project.questions.ResponseCode;
+import com.serenity.project.task.PostRegisterUser;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;

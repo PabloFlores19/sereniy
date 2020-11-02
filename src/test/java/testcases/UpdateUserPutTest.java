@@ -1,9 +1,9 @@
 package testcases;
 
-import main.elements.ApiGet;
-import main.models.users.PutUserInfo;
-import main.questions.ResponseCode;
-import main.task.PutUpdateUser;
+import com.serenity.project.dataprovider.ApiGet;
+import com.serenity.project.model.users.PutUserInfo;
+import com.serenity.project.questions.ResponseCode;
+import com.serenity.project.task.PutUpdateUser;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;

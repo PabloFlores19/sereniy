@@ -1,20 +1,20 @@
 package testcases;
 
-import main.elements.LoginTwitchPage;
-import main.steps.LoginPage;
+import com.serenity.project.elements.LoginTwitchPage;
+import com.serenity.project.steps.LoginPage;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 @RunWith(SerenityRunner.class)
 public class LoginTwitchTest {
 
     LoginTwitchPage url;
-    @Managed
-    WebDriver webDriver;
+    WebDriver driver;
     @Steps
     LoginPage loginPage;
 
@@ -22,7 +22,10 @@ public class LoginTwitchTest {
 
     @Test
     public void login(){
-        webDriver.get("https://www.google.com");
+        ChromeOptions options = new ChromeOptions();
+        options.setCapability("acceptInsecureCerts", true);
+        driver = new ChromeDriver(options);
+        driver.get("http://localhost:8080");
         loginPage.searchWebTwitch();
     }
 }

@@ -1,7 +1,7 @@
 package testcases;
 
-import main.elements.ApiGet;
-import main.facts.SpotifyPlans;
+import com.serenity.project.dataprovider.ApiGet;
+import com.serenity.project.facts.SpotifyPlans;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;

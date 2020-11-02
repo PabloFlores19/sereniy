@@ -11,6 +11,6 @@
     <context:annotation-config/>
     <context:property-placeholder location="classpath:api.properties"  ignore-unresolvable="true" order="1"/>
     <context:property-placeholder location="classpath:test.properties" order="2"/>
-    <bean id="api" class="main.daopages.ApiDAO"/>
-    <bean id="login" class="main.daopages.LoginDAO"/>
+    <bean id="api" class="com.serenity.project.daopages.ApiDAO"/>
+    <bean id="login" class="com.serenity.project.daopages.LoginDAO"/>
 </beans>

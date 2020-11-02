@@ -1,10 +1,10 @@
 package testcases;
 
-import main.elements.ApiGet;
-import main.models.users.Datum;
-import main.questions.GetUsersQuestion;
-import main.questions.ResponseCode;
-import main.task.GetUser;
+import com.serenity.project.dataprovider.ApiGet;
+import com.serenity.project.model.users.Datum;
+import com.serenity.project.questions.GetUsersQuestion;
+import com.serenity.project.questions.ResponseCode;
+import com.serenity.project.task.GetUser;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
