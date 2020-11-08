@@ -5,11 +5,8 @@ import com.serenity.project.config.AppConfig;
 import com.serenity.project.config.DataConfiguration;
 import com.serenity.project.model.users.Person;
 import com.serenity.project.model.PersonRepository;
-import com.serenity.project.task.AddUser;
-import com.serenity.project.task.NavigateTo;
+import com.serenity.project.task.*;
 import com.serenity.project.performable.ValidatePage;
-import com.serenity.project.task.InsertElement;
-import com.serenity.project.task.ValidateInsert;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Step;
@@ -27,8 +24,8 @@ import static net.serenitybdd.screenplay.actors.OnStage.withCurrentActor;
 
 public class CrudPage {
 
-    CrudUserPage user;
-
+    private CrudUserPage user;
+    private AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
     @Step("This step will ignore the ssl certs")
     public WebDriver ignoreSsl(WebDriver webDriver){
@@ -60,7 +57,7 @@ public class CrudPage {
     }
 
     @Step
-    public void AddUser(String term) {
+    public void addUser(String term) {
         withCurrentActor(InsertElement.term(term));
     }
 
@@ -76,11 +73,32 @@ public class CrudPage {
 
     @Step("query the data base")
     public List<Person> getElementsDatabase(){
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
         PersonRepository person = context.getBean(PersonRepository.class);
         return person.selectPerson();
     }
 
+    @Step("select first insert database")
+    public List<Person>getFirstElementDataBase(){
+        PersonRepository person = context.getBean(PersonRepository.class);
+        return person.selectFirstPerson();
+    }
 
+    @Step("Update a new user")
+    public void updateUserData(String name, String lastName, String address, String phone){
+        withCurrentActor(UpdateUser.intoDataBase(name, lastName, address, phone));
+    }
+
+    @Step("Delete element")
+    public void deleteUserData(){
+        DeleteUser deleteUser = new DeleteUser();
+        withCurrentActor(deleteUser);
+    }
+
+    @Step("Get current rows from database")
+    public int getRows(){
+        PersonRepository personRepository = context.getBean(PersonRepository.class);
+        return personRepository.countRows();
+    }
 
 }

@@ -7,6 +7,15 @@ public class Person {
     private String apellido;
     private String direccion;
     private String telefono;
+    private int count;
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 
     public int getId() {
         return id;

@@ -4,12 +4,15 @@ import com.serenity.project.steps.CrudPage;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SerenityRunner.class)
-public class CrudWebValidationTest {
+public class DeleteElement {
+
+    private boolean valueName;
 
     @Steps
     CrudPage crudPage;
@@ -23,9 +26,10 @@ public class CrudWebValidationTest {
     @Test
     public void testValidationCrudPage(){
         crudPage.validationPage();
-        crudPage.addUserData("Pablo Pantoja", "Flores", "Address", "45345345");
-       // crudPage.validateInsertInWebPage("Pablo Pantoja", "Flores", "Address", "45345345");
-        System.out.println(crudPage.getElementsDatabase());
+        int getFirstValues = crudPage.getRows();
+        crudPage.deleteUserData();
+        int getLastValues = crudPage.getRows();
+        Assert.assertNotEquals(getFirstValues, getLastValues);
     }
 
     @After

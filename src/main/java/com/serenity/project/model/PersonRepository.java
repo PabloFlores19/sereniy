@@ -9,7 +9,13 @@ import java.util.List;
 @Repository
 public interface PersonRepository {
 
-    @Select("SELECT * FROM persona")
+    @Select("select * from persona order by id desc limit 1")
     List<Person>selectPerson();
+
+    @Select("select * from persona order by id limit 1")
+    List<Person>selectFirstPerson();
+
+    @Select("select count(*) from persona")
+    int countRows();
 
 }
