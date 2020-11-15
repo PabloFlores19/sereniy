@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SerenityRunner.class)
-public class DeleteElement {
+public class DeleteElementTest {
 
     private boolean valueName;
 

@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.function.Function;
 
 @RunWith(SerenityRunner.class)
-public class InsertElement {
+public class UpdateElementTest {
 
     private boolean valueName;
 
@@ -31,12 +31,10 @@ public class InsertElement {
     @Test
     public void testValidationCrudPage(){
         crudPage.validationPage();
-        crudPage.addUserData("Pablo Pantoja", "Flores", "Address", "45345345");
-       // crudPage.validateInsertInWebPage("Pablo Pantoja", "Flores", "Address", "45345345");
-        List<Person> list = crudPage.getElementsDatabase();
-        valueName = validateData(list, Person::getNombre, "Pablo");
-        Assert.assertTrue("Name not found", valueName);
-
+        crudPage.updateUserData("Jill", "Valentine", "Racoon City", "28");
+        List<Person> list = crudPage.getFirstElementDataBase();
+        valueName = validateData(list, Person::getNombre, "Jill");
+        Assert.assertTrue(valueName);
     }
 
     @After
