@@ -15,7 +15,7 @@ Git:
     cd serenity-junit-starter
 
 
-Or simply [download a zip](https://github.com/kloDerek/sereniy.zip) file.
+Or simply [download a zip](https://github.com/kloDerek/sereniy/tree/test.zip) file.
 
 ## Use Maven
 
